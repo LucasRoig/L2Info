@@ -1,0 +1,48 @@
+
+ex6.elf:     file format elf32-littlearm
+ex6.elf
+architecture: arm, flags 0x00000012:
+EXEC_P, HAS_SYMS
+start address 0x00002000
+
+Program Header:
+    LOAD off    0x00000054 vaddr 0x00002000 paddr 0x00002000 align 2**2
+         filesz 0x00000128 memsz 0x00000128 flags rwx
+private flags = 2: [APCS-32] [FPA float format] [has entry point]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn  Flags
+  0 .text         00000028  00002000  00002000  00000054  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00002128  00002128  0000017c  2**0  CONTENTS, ALLOC, LOAD, DATA
+  2 .sbss         00000000  00002128  00002128  0000017c  2**0  CONTENTS
+  3 .bss          00000000  00002128  00002128  0000017c  2**0  ALLOC
+  4 .stab         00000084  00000000  00000000  0000017c  2**2  CONTENTS, READONLY, DEBUGGING
+  5 .stabstr      00000007  00000000  00000000  00000200  2**0  CONTENTS, READONLY, DEBUGGING
+  6 .stack        00000000  00080000  00080000  00000207  2**0  CONTENTS
+SYMBOL TABLE:
+00002000 l    d  .text	00000000 
+00002128 l    d  .data	00000000 
+00002128 l    d  .sbss	00000000 
+00002128 l    d  .bss	00000000 
+00000000 l    d  .stab	00000000 
+00000000 l    d  .stabstr	00000000 
+00080000 l    d  .stack	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    d  *ABS*	00000000 
+00002024 l       .text	00000000 tab
+00002004 l       .text	00000000 comp
+00002020 l       .text	00000000 exit
+00002014 l       .text	00000000 tolow
+00002128 g       *ABS*	00000000 _bss_end__
+00002128 g       *ABS*	00000000 __bss_start__
+00002128 g       *ABS*	00000000 __bss_end__
+00002000 g       .text	00000000 _start
+00002128 g       *ABS*	00000000 __bss_start
+00002128 g       *ABS*	00000000 __end__
+00002128 g       *ABS*	00000000 _edata
+00002128 g       *ABS*	00000000 _end
+00080000 g       .stack	00000000 _stack
+00002128 g       .data	00000000 __data_start
+
+

@@ -1,0 +1,15 @@
+
+ex6.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+00002000 <_start> e28f001c 	add	r0, pc, #28	; 0x1c
+00002004 <comp> e5d01000 	ldrb	r1, [r0]
+00002008 <comp+0x4> e3510000 	cmp	r1, #0	; 0x0
+0000200c <comp+0x8> 0a000003 	beq	00002020 <exit>
+00002010 <comp+0xc> eaffffff 	b	00002014 <tolow>
+00002014 <tolow> e2811020 	add	r1, r1, #32	; 0x20
+00002018 <tolow+0x4> e4c01001 	strb	r1, [r0], #1
+0000201c <tolow+0x8> eafffff8 	b	00002004 <comp>
+00002020 <exit> eafffffe 	b	00002020 <exit>
+00002024 <tab> 004d5241 	subeq	r5, sp, r1, asr #4
+Disassembly of section .data:

@@ -1,0 +1,12 @@
+
+ex5.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+00002000 <_start> e28f0010 	add	r0, pc, #16	; 0x10
+00002004 <_start+0x4> e5d01000 	ldrb	r1, [r0]
+00002008 <_start+0x8> e5d02003 	ldrb	r2, [r0, #3]
+0000200c <_start+0xc> e5c01003 	strb	r1, [r0, #3]
+00002010 <_start+0x10> e5c02000 	strb	r2, [r0]
+00002014 <exit> eafffffe 	b	00002014 <exit>
+00002018 <tab> 2474d0a0 	ldrcsbt	sp, [r4], -#160
+Disassembly of section .data:
