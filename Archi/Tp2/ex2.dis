@@ -1,0 +1,17 @@
+
+ex2.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+00002000 <_start> e28f0024 	add	r0, pc, #36	; 0x24
+00002004 <_start+0x4> e28f1020 	add	r1, pc, #32	; 0x20
+00002008 <_start+0x8> e2811e19 	add	r1, r1, #400	; 0x190
+0000200c <_start+0xc> e3a02002 	mov	r2, #2	; 0x2
+00002010 <_start+0x10> e4802004 	str	r2, [r0], #4
+00002014 <boucle> e0822002 	add	r2, r2, r2
+00002018 <boucle+0x4> e2422001 	sub	r2, r2, #1	; 0x1
+0000201c <boucle+0x8> e4802004 	str	r2, [r0], #4
+00002020 <boucle+0xc> e1500001 	cmp	r0, r1
+00002024 <boucle+0x10> dafffffa 	ble	00002014 <boucle>
+00002028 <exit> eafffffe 	b	00002028 <exit>
+	...
+Disassembly of section .data:

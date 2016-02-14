@@ -1,0 +1,29 @@
+
+ex3.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+00002000 <_start> e28f0030 	add	r0, pc, #48	; 0x30
+00002004 <_start+0x4> e1a01000 	mov	r1, r0
+00002008 <_start+0x8> e2811028 	add	r1, r1, #40	; 0x28
+0000200c <_start+0xc> e4902004 	ldr	r2, [r0], #4
+00002010 <boucle> e4903004 	ldr	r3, [r0], #4
+00002014 <boucle+0x4> e1530002 	cmp	r3, r2
+00002018 <boucle+0x8> ba000002 	blt	00002028 <echange>
+0000201c <boucle+0xc> e1500001 	cmp	r0, r1
+00002020 <boucle+0x10> dafffffa 	ble	00002010 <boucle>
+00002024 <boucle+0x14> ea000002 	b	00002034 <exit>
+00002028 <echange> e1a02003 	mov	r2, r3
+0000202c <echange+0x4> e1500001 	cmp	r0, r1
+00002030 <echange+0x8> dafffff6 	ble	00002010 <boucle>
+00002034 <exit> eafffffe 	b	00002034 <exit>
+00002038 <tab> 0000000a 	andeq	r0, r0, sl
+0000203c <tab+0x4> 00000005 	andeq	r0, r0, r5
+00002040 <tab+0x8> 00000001 	andeq	r0, r0, r1
+00002044 <tab+0xc> 00000002 	andeq	r0, r0, r2
+00002048 <tab+0x10> 00000003 	andeq	r0, r0, r3
+0000204c <tab+0x14> ffffffff 	swinv	0x00ffffff
+00002050 <tab+0x18> fffffffb 	swinv	0x00fffffb
+00002054 <tab+0x1c> 00000004 	andeq	r0, r0, r4
+00002058 <tab+0x20> fffffff7 	swinv	0x00fffff7
+0000205c <tab+0x24> fffffffd 	swinv	0x00fffffd
+Disassembly of section .data:

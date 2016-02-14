@@ -1,0 +1,26 @@
+
+ex4.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+00002000 <_start> e28f0048 	add	r0, pc, #72	; 0x48
+00002004 <_start+0x4> e1a01000 	mov	r1, r0
+00002008 <_start+0x8> e2811050 	add	r1, r1, #80	; 0x50
+0000200c <_start+0xc> e3a02007 	mov	r2, #7	; 0x7
+00002010 <_start+0x10> e4802004 	str	r2, [r0], #4
+00002014 <comp> e1500001 	cmp	r0, r1
+00002018 <comp+0x4> ca00000b 	bgt	0000204c <exit>
+0000201c <comp+0x8> e1a03f82 	mov	r3, r2, lsl #31
+00002020 <comp+0xc> e3530000 	cmp	r3, #0	; 0x0
+00002024 <comp+0x10> 0a000000 	beq	0000202c <pair>
+00002028 <comp+0x14> ea000002 	b	00002038 <impair>
+0000202c <pair> e1a020a2 	mov	r2, r2, lsr #1
+00002030 <pair+0x4> e4802004 	str	r2, [r0], #4
+00002034 <pair+0x8> eafffff6 	b	00002014 <comp>
+00002038 <impair> e3a03003 	mov	r3, #3	; 0x3
+0000203c <impair+0x4> e0020293 	mul	r2, r3, r2
+00002040 <impair+0x8> e2822001 	add	r2, r2, #1	; 0x1
+00002044 <impair+0xc> e4802004 	str	r2, [r0], #4
+00002048 <impair+0x10> eafffff1 	b	00002014 <comp>
+0000204c <exit> eafffffe 	b	0000204c <exit>
+	...
+Disassembly of section .data:
