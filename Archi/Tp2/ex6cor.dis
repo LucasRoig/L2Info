@@ -1,0 +1,16 @@
+
+ex6cor.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+00002000 <_start> e3a01001 	mov	r1, #1	; 0x1
+00002004 <_start+0x4> e3a02000 	mov	r2, #0	; 0x0
+00002008 <_start+0x8> e28f3018 	add	r3, pc, #24	; 0x18
+0000200c <debut> e3510064 	cmp	r1, #100	; 0x64
+00002010 <debut+0x4> 0a000003 	beq	00002024 <exit>
+00002014 <debut+0x8> e0822001 	add	r2, r2, r1
+00002018 <debut+0xc> e4832004 	str	r2, [r3], #4
+0000201c <debut+0x10> e2811001 	add	r1, r1, #1	; 0x1
+00002020 <debut+0x14> eafffff9 	b	0000200c <debut>
+00002024 <exit> eafffffe 	b	00002024 <exit>
+	...
+Disassembly of section .data:

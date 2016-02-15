@@ -1,0 +1,37 @@
+
+ex7.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+00002000 <_start> e28f0050 	add	r0, pc, #80	; 0x50
+00002004 <_start+0x4> e2801028 	add	r1, r0, #40	; 0x28
+00002008 <_start+0x8> e3a02001 	mov	r2, #1	; 0x1
+0000200c <_start+0xc> e3a03000 	mov	r3, #0	; 0x0
+00002010 <_start+0x10> e4904004 	ldr	r4, [r0], #4
+00002014 <boucle> e1500001 	cmp	r0, r1
+00002018 <boucle+0x4> aa00000a 	bge	00002048 <fin>
+0000201c <boucle+0x8> e4905004 	ldr	r5, [r0], #4
+00002020 <boucle+0xc> e1540005 	cmp	r4, r5
+00002024 <boucle+0x10> e1a04005 	mov	r4, r5
+00002028 <boucle+0x14> 1a000001 	bne	00002034 <notequal>
+0000202c <boucle+0x18> e2822001 	add	r2, r2, #1	; 0x1
+00002030 <boucle+0x1c> eafffff7 	b	00002014 <boucle>
+00002034 <notequal> e1520003 	cmp	r2, r3
+00002038 <notequal+0x4> da000000 	ble	00002040 <init>
+0000203c <notequal+0x8> e1a03002 	mov	r3, r2
+00002040 <init> e3a02001 	mov	r2, #1	; 0x1
+00002044 <init+0x4> eafffff2 	b	00002014 <boucle>
+00002048 <fin> e1520003 	cmp	r2, r3
+0000204c <fin+0x4> da000000 	ble	00002054 <exit>
+00002050 <fin+0x8> e1a03002 	mov	r3, r2
+00002054 <exit> eafffffe 	b	00002054 <exit>
+00002058 <tab> 00000001 	andeq	r0, r0, r1
+0000205c <tab+0x4> 00000009 	andeq	r0, r0, r9
+00002060 <tab+0x8> 00000005 	andeq	r0, r0, r5
+00002064 <tab+0xc> 00000005 	andeq	r0, r0, r5
+00002068 <tab+0x10> 00000005 	andeq	r0, r0, r5
+0000206c <tab+0x14> 00000005 	andeq	r0, r0, r5
+00002070 <tab+0x18> 00000005 	andeq	r0, r0, r5
+00002074 <tab+0x1c> 00000005 	andeq	r0, r0, r5
+00002078 <tab+0x20> 00000003 	andeq	r0, r0, r3
+0000207c <tab+0x24> 00000003 	andeq	r0, r0, r3
+Disassembly of section .data:

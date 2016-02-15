@@ -1,0 +1,21 @@
+
+ex5.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+00002000 <_start> e5df0024 	ldrb	r0, [pc, #36]	; 0000202c <a>
+00002004 <_start+0x4> e5df1021 	ldrb	r1, [pc, #33]	; 0000202d <b>
+00002008 <_start+0x8> e5df201e 	ldrb	r2, [pc, #30]	; 0000202e <c>
+0000200c <_start+0xc> e1500001 	cmp	r0, r1
+00002010 <_start+0x10> aa000000 	bge	00002018 <cmp2>
+00002014 <_start+0x14> e1a00001 	mov	r0, r1
+00002018 <cmp2> e1500002 	cmp	r0, r2
+0000201c <cmp2+0x4> aa000000 	bge	00002024 <fin>
+00002020 <cmp2+0x8> e1a00002 	mov	r0, r2
+00002024 <fin> e58f0003 	str	r0, [pc, #3]	; 0000202f <max>
+00002028 <exit> eafffffe 	b	00002028 <exit>
+0000202c <a> ff040305 	swinv	0x00040305
+0000202d <b> ffff0403 	swinv	0x00ff0403
+0000202e <c> ffffff04 	swinv	0x00ffff04
+0000202f <max> ffffffff 	swinv	0x00ffffff
+	...
+Disassembly of section .data:

@@ -1,6 +1,6 @@
 # AT91EB40A board with angel / Gdb Simulator makefile
 
-PROG		= ex4
+PROG		= ex7
 
 # Tools
 #
@@ -23,7 +23,7 @@ DUMP_DIS	= -D --prefix-addresses --show-raw-insn
 ASM_SRC 	= $(PROG).s
 
 OBJS16		= $(ASM_SRC:.s=.o16)
-OBJS32		= $(ASM_SRC:.s=.o32) 
+OBJS32		= $(ASM_SRC:.s=.o32)
 
 %.o32: %.s makefile
 	$(AS)  $(ASFLAGS) $*.s -o $*.o32
